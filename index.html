@@ -1,0 +1,212 @@
+<html>
+  <head>
+
+    <style>
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 30px;
+      line-height:250%;
+      font-weight: 500;
+      text-rendering: optimizeLegibility;
+    }
+    h2 {
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 1px;
+      letter-spacing: -0.015em;
+      font-weight: 300;
+      line-height:150%;
+      text-rendering: optimizeLegibility;
+    }
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font: normal 12px/150% Arial, Helvetica, sans-serif;
+        background: #fff;
+    }
+    table, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 2px 2px;
+        text-align: center;
+    }
+    th {
+        padding: 3px 10px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 100;
+        background-color:#DADADA;
+        color:#000000;
+        font-size: 15px;
+        border-left: 1px solid black;
+        height: 30px;
+    }
+    table tr {
+        color: #000000;
+        border: 1px solid black;
+        font-size: 12px;
+        font-weight: normal;
+        height: 40px;
+    }
+    audio {
+      width: 150px;
+      padding: 1px;
+    }
+    div {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 100;
+      font-size: 15px;
+      line-height: 24px;
+    }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Audio samples from "IMPROVING NATURALNESS AND CONTROLLABILITY OF SEQUENCE-TO-SEQUENCE
+SPEECH SYNTHESIS BY LEARNING LOCAL PROSODY REPRESENTATIONS"</title>
+  </head>
+
+  <body>
+    <article>
+      <header>
+        <h1>Audio samples from "IMPROVING NATURALNESS AND CONTROLLABILITY OF SEQUENCE-TO-SEQUENCE
+SPEECH SYNTHESIS BY LEARNING LOCAL PROSODY REPRESENTATIONS"</h1>
+      </header>
+    </article>
+    <!-- <br> -->
+    <!-- <div style="font-size: 20px;"><b>Paper:</b> <a href="https://arxiv.org/">arXiv</a> </div> -->
+    <br>
+    <div style="font-size: 20px;"><b>Authors:</b> Cheng Gong, Longbiao Wang, Zhenhua Ling, Shaotong Guo, Ju Zhang, Jianwu Dang</div>
+    <br>
+    <div style="font-size: 20px; width: 1200px;"><b>Abstract:</b>State-of-the-art neural text-to-speech (TTS) networks are trained with a large amount of speech data, enabling the generation of speech that can be indistinguishable from natural speech. However, the prosody and controllability of the generated speech is still insufficient, especially in non English languages. Moreover, the generated prosody is solely defined by the input text, which does not allow for different styles for the same sentence or words. In this paper, we extend Tacotron2 with a pitch prediction task to capture pitch-related representations. Specifically, the learned pitch related suprasegmental information simulltaneously along with traditional characters features will be fed into decoder to
+generate final Mel spectrogram. Experiments show that the proposed method can improve the quality of the generated speech (4.37 VS 4.22 in MOS ). We also demonstrate that we can easily achieve word-level pitch-accent control during generation by changing pitch-related representations before passing it to the decoder network.</div>
+
+    <br>
+    <!--
+    <br>
+    <div style="font-size: 18px"><h2>The following samples demonstrate the prosody control capability by adjusting bias of each prosodic dimension.</div>
+    <br>
+
+    <div><h2>Baseline: -</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>[No control]</th><th style="background-color: #f2f2f2;">-</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th style="background-color: #f2f2f2;">-</th>
+          <td><audio controls=""><source src="audio/syn_baseline/syn_137.wav" type="audio/wav"></audio></td>
+        </tr>
+      </tbody>
+    </table>
+      <h3>Definition (same as defined in  our submitted paper)</h3>
+      
+    <br>
+    <br>
+    -->
+    <div>
+     <h3>Definition (same as defined in  our submitted paper)</h3>
+     <strong>Baseline</strong>: Baseline model trained without pitch encoder and pitch-related representations.<br> 
+     <strong>Proposed_NoVQ</strong>: Our proposed model was trained without the VQ codebook, such that the pitch-related representations concatenated with the linguistic encoder output was continuous.<br> 
+     <strong>Proposed_VQ</strong>: Our proposed model was trained with the VQ codebook, such that the pitch-related representations concatenated with the linguistic encoder output were discrete.
+      </div>
+    
+    <div><h2>Text: 昨日这名伤者与<b>医生</b>全部被警方依法刑事拘留。</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th style="background-color: #b3d1ff;">1.4</th>
+          <th style="background-color: #e6f0ff;">1.2</th>
+          <th style="background-color: #ffffff;">1.0</th>
+          <th style="background-color: #ffebe6;">0.8</th>
+          <th style="background-color: #ffc2b3;">0.6</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr>
+          <th style="background-color: #f2f2f2;">Ground truth</th>
+          <td> - </td>
+          <td> - </td>
+          <td><audio controls=""><source src="audio1/text1_GT.wav" type="audio/wav"></audio></td>
+          <td> - </td>
+          <td> - </td>
+        </tr>
+        <tr>
+          <th style="background-color: #f2f2f2;">Baseline</th>
+          <td><audio controls=""><source src="audio1/text1_bs_1.4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio1/text1_bs_1.2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio1/text1_bs_1.0.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio1/text1_bs_0.8.wav" type="audio/wav"></audio></td>
+           <td><audio controls=""><source src="audio1/text1_bs_0.6.wav" type="audio/wav"></audio></td>
+        </tr>
+        <tr>
+          <th style="background-color: #f2f2f2;">Proposed_NoVQ</th>
+          <td><audio controls=""><source src="audio1/text1_NO_1.4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio1/text1_NO_1.2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio1/text1_NO_1.0.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio1/text1_NO_0.8.wav" type="audio/wav"></audio></td>
+           <td><audio controls=""><source src="audio1/text1_NO_0.6.wav" type="audio/wav"></audio></td>
+        </tr>
+        <tr>
+          <th style="background-color: #f2f2f2;">Proposed_VQ</th>
+           <td><audio controls=""><source src="audio1/text1_VQ_1.4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio1/text1_VQ_1.2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio1/text1_VQ_1.0.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio1/text1_VQ_0.8.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio1/text1_VQ_0.6.wav" type="audio/wav"></audio></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div><h2>Text: 她见我一进门就骂，<b>吃饭</b>时也骂，骂得我抬不起头。</div>
+<table>
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th style="background-color: #b3d1ff;">1.4</th>
+          <th style="background-color: #e6f0ff;">1.2</th>
+          <th style="background-color: #ffffff;">1.0</th>
+          <th style="background-color: #ffebe6;">0.8</th>
+          <th style="background-color: #ffc2b3;">0.6</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr>
+          <th style="background-color: #f2f2f2;">Ground truth</th>
+          <td> - </td>
+          <td> - </td>
+          <td><audio controls=""><source src="audio2/text2_GT.wav" type="audio/wav"></audio></td>
+          <td> - </td>
+          <td> - </td>
+        </tr>
+        <tr>
+          <th style="background-color: #f2f2f2;">Baseline</th>
+          <td><audio controls=""><source src="audio2/text2_bs_1.4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio2/text2_bs_1.2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio2/text2_bs_1.0.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio2/text2_bs_0.8.wav" type="audio/wav"></audio></td>
+           <td><audio controls=""><source src="audio2/text2_bs_0.6.wav" type="audio/wav"></audio></td>
+        </tr>
+        <tr>
+          <th style="background-color: #f2f2f2;">Proposed_NoVQ</th>
+          <td><audio controls=""><source src="audio2/text2_NO_1.4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio2/text2_NO_1.2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio2/text2_NO_1.0.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio2/text2_NO_0.8.wav" type="audio/wav"></audio></td>
+           <td><audio controls=""><source src="audio2/text2_NO_0.6.wav" type="audio/wav"></audio></td>
+        </tr>
+        <tr>
+          <th style="background-color: #f2f2f2;">Proposed_VQ</th>
+           <td><audio controls=""><source src="audio2/text2_VQ_1.4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio2/text2_VQ_1.2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio2/text2_VQ_1.0.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio2/text2_VQ_0.8.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="audio2/text2_VQ_0.6.wav" type="audio/wav"></audio></td>
+        </tr>
+      </tbody>
+    </table>
+      <br>
+      <br>
+  </body>
+</html>
