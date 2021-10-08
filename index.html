@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   </script>
-  <title>Attentron: Few-shot Text-to-Speech Exploiting Attention-based Variable Length Embedding</title>
+  <title>USING MULTIPLE REFERENCE AUDIOS AND STYLE EMBEDDING CONSTRAINTS FOR SPEECH SYNTHESIS</title>
   <link rel="shortcut icon" href="images/favicon.ico">
   <link rel="stylesheet" type="text/css" href="style.css" media="screen">
   <script type="text/javascript" async
@@ -16,33 +16,30 @@
   <!--This page uses a template from the <a href="http://hi.cs.waseda.ac.jp/~iizuka/projects/completion/">project page</a> of Satoshi Iizuka et al, <i>"Globally and Locally Consistent Image Completion"</i>.-->
   <!--</div>-->
   <div class="content">
-    <img src="images/hpcnt_logo.png" width="200" border="0" class="center">
-    <h1>Attentron: Few-shot Text-to-Speech Exploiting Attention-based Variable Length Embedding</h1>
+    <!--<img src="images/hpcnt_logo.png" width="200" border="0" class="center">-->
+    <h1>USING MULTIPLE REFERENCE AUDIOS AND STYLE EMBEDDING CONSTRAINTS FOR SPEECH SYNTHESIS</h1>
     <p id="authors">
-      Seungwoo Choi <sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;
-      Seungju Han <sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;
-      Dongyoung Kim <sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;
-      Sungjoo Ha <sup>†</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+      Cheng Gong &nbsp;&nbsp;&nbsp;&nbsp;
+      Longbiao Wang <sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+      Zhenhua Ling &nbsp;&nbsp;&nbsp;&nbsp;
+      Ju Zhang &nbsp;&nbsp;&nbsp;&nbsp;
+      Jianwu Dang &nbsp;&nbsp;&nbsp;&nbsp;
       <br><br>
-      <a href="http://hyperconnect.com/", target="_blank">Hyperconnect</a><br>Seoul, Republic of Korea
-      <br>Accepted to <a href="http://www.interspeech2020.org/", target="_blank">Interspeech 2020</a>
+      <!--<a href="http://hyperconnect.com/", target="_blank">Hyperconnect</a><br>Seoul, Republic of Korea-->
+      <br>Submitted to ICASSP2022 <a href="https://2022.ieeeicassp.org/", target="_blank">ICASSP 2022</a>
     </p>
     <div class="center">
       <a class="button" href="https://arxiv.org/abs/2005.08484">Paper (arXiv)</a>
     </div>
     <div class="footnote">
-      * Equal contributions, listed in alphabetical order. &nbsp;&nbsp;&nbsp;&nbsp; † Corresponding author.
+      *Corresponding author.
     </div>
   </div>
   <div class="content">
     <h2>Abstract</h2>
     <p>
-      On account of growing demands for personalization, the need for a so-called few-shot TTS system that clones speakers with only a few data is emerging.
-      To address this issue, we propose Attentron, a few-shot TTS model that clones voices of speakers unseen during training.
-      It introduces two special encoders, each serving different purposes.
-      A fine-grained encoder extracts variable-length style information via an attention mechanism, and a coarse-grained encoder greatly stabilizes the speech synthesis, circumventing unintelligible gibberish even for synthesizing speech of unseen speakers.
-      In addition, the model can scale out to an arbitrary number of reference audios to improve the quality of the synthesized speech.
-      According to our experiments, including a human evaluation, the proposed model significantly outperforms state-of-the-art models when generating speech for unseen speakers in terms of speaker similarity and quality.
+      The end-to-end speech synthesis model can directly take an utterance as reference audio, and generate speech from the text with prosody and speaker characteristics similar to the reference audio. However, an appropriate acoustic embedding must be manually selected during inference. Due to the fact that only the matched text and speech are used in the training process, using unmatched text and speech for inference would cause the model to synthesize speech
+with low content quality. In this study, we propose to mitigate these two problems by using multiple reference audios and style embedding constraints rather than using only the target audio. Multiple reference audios are automatically selected using the sentence similarity determined by Bidirectional Encoder Representations from Transformers (BERT). In addition, we use “target” style embedding from a pre-trained encoder as a constraint by considering the mutual information between the predicted and “target” style embedding. The experimental results show that the proposed model can improve the speech naturalness and content quality with multiple reference audios and can also outperform the baseline model in ABX preference tests of style similarity.
     </p>
   </div>
 
