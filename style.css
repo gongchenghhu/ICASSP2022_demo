@@ -24,16 +24,6 @@ a, a:visited {
   box-shadow: 0px 0px 2px #999;
   border-radius: 0px;
 }
-.contents {
-  width : 1450px;
-  height: 60x;
-  padding : 25px 50px;
-  margin : 25px auto;
-  background-color : #fff;
-  overflow:scroll; 
-  box-shadow: 0px 0px 2px #999;
-  border-radius: 0px;
-}
 .center {
   display: block;
   text-align: center;
